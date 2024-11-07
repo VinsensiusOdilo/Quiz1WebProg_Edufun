@@ -1,0 +1,29 @@
+body{
+    margin: 0;
+}
+
+.footer{
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+}
+
+.btn{
+    border-radius: 30px;
+    height: 50px;
+    width: 300px;
+    color: white;
+}
+
+.pic{
+    border-radius: 50px;
+}
+
+/* #footer{
+    clear:both;
+    background: #cfc8c0;
+    overflow: hidden;
+    display: block;
+    bottom:0; width:100%
+} */
