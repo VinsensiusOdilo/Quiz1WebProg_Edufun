@@ -6,7 +6,7 @@
             </a>
             <ul class="navbar-nav ms-auto fw-bold">
                 <li class="nav-item pe-5">
-                    <a class="nav-link link-dark" href=""><span class="fs-5">Home</span></a>
+                    <a class="nav-link link-dark" href="{{ route('edufun.homepage') }}"><span class="fs-5">Home</span></a>
                 </li>
                 <li class="nav-item dropdown pe-5">
                     <a class="nav-link dropdown-toggle link-dark" href="#" id="categoryDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -18,10 +18,10 @@
                     </ul>
                 </li>
                 <li class="nav-item pe-5">
-                    <a class="nav-link link-dark" href=""><span class="fs-5">Writers</span></a>
+                    <a class="nav-link link-dark" href="{{ route('edufun.writers') }}"><span class="fs-5">Writers</span></a>
                 </li>
                 <li class="nav-item pe-5">
-                    <a class="nav-link link-dark" href=""><span class="fs-5">About Us</span></a>
+                    <a class="nav-link link-dark" href="{{ route('edufun.aboutus') }}"><span class="fs-5">About Us</span></a>
                 </li>
                 <li class="nav-item pe-5">
                     <a class="nav-link link-dark" href=""><span class="fs-5">Popular</span></a>

@@ -6,6 +6,7 @@ body{
     position: absolute;
     left: 0;
     right: 0;
+    /* bottom:0; */
     width: 100%;
 }
 
@@ -18,6 +19,11 @@ body{
 
 .pic{
     border-radius: 50px;
+}
+
+.img{
+    height: 200px;
+    width: 200px;
 }
 
 /* #footer{
