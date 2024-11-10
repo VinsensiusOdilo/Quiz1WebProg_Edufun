@@ -23,7 +23,7 @@
                         <p class="pt-2">{{ Str::limit($ds->content, 75) }}</p>
 
                         <div class="d-flex flex-row-reverse">
-                            <button class="btn btn-large btn-dark fw-bold">Read more...</button>
+                        <a href="{{route('edufun.artikel', ['id' => $ds->id])}}"><button class="btn btn-large btn-dark fw-bold">Read more...</button></a>
                         </div>
                     </td>
                 </tr>
