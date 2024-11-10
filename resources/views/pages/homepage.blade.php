@@ -11,40 +11,27 @@
     <div class="row">
         <table class="table">
             <tbody>
+                @foreach ($articles as $a)
                 <tr class="pt-5 pb-5">
                     <td class="col-5">
-                        <img src="{{ asset('DeepLearning_bg.webp') }}" alt="DeepLearning-bg" class="img-fluid pic">
+                        <img src="{{ asset($a->image_name) }}" alt={{ $a->image_name }} class="img-fluid pic">
                     </td>
                     <td class="col-7">
-                        <span class="fs-3 fw-bold">Deep Learning</span>
+                        <span class="fs-3 fw-bold">{{ $a->title }}</span>
                         <br>
-                        <span class="fs-6">07 Nov 2024 | by: Vinsen</span>
-                        <p class="pt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Non amet facilis, laudantium perferendis accusamus atque aut molestias, sit dolore tenetur accusantium id fuga aspernatur nesciunt itaque quidem dolor. Ut aliquid tempora nisi numquam cupiditate adipisci harum dolorum blanditiis, ex, iusto unde. Dolore reiciendis repudiandae impedit iure iusto adipisci quis nihil alias dolor.</p>
+                        <span class="fs-6">{{ \Carbon\Carbon::parse($a->time_created)->format('d M Y') . " | " . $a->writers->author_name }}</span>
+                        <p class="pt-2">{{ Str::limit($a->content ,75) }}</p>
 
                         <div class="d-flex flex-row-reverse">
-                            <button class="btn btn-large btn-dark fw-bold">Read more...</button>
+                            <a href="{{route('edufun.artikel', ['id' => $a->id])}}"><button class="btn btn-large btn-dark fw-bold">Read more...</button></a>
                         </div>
                     </td>
                 </tr>
+                @endforeach
             </tbody>
         </table>
+        {{ $articles->links() }}
     </div>
-
-    <!-- <div class="row pt-5 pb-5">
-        <div class="col-5">
-            <img src="{{ asset('DeepLearning_bg.webp') }}" class="img-fluid pic" alt="">
-        </div>
-        <div class="col-7">
-            <span class="fs-3 fw-bold">Deep Learning</span>
-            <br>
-            <span class="fs-6">07 Nov 2024 | by: Vinsen</span>
-            <p class="pt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Non amet facilis, laudantium perferendis accusamus atque aut molestias, sit dolore tenetur accusantium id fuga aspernatur nesciunt itaque quidem dolor. Ut aliquid tempora nisi numquam cupiditate adipisci harum dolorum blanditiis, ex, iusto unde. Dolore reiciendis repudiandae impedit iure iusto adipisci quis nihil alias dolor.</p>
-
-            <div class="d-flex flex-row-reverse">
-                <button class="btn btn-large btn-dark fw-bold">Read more...</button>
-            </div>
-        </div>
-    </div> -->
 </div>
 
 @endsection

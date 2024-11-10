@@ -13,8 +13,8 @@
                         <span class="fs-5">Category</span>
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="categoryDropdown">
-                        <li><a class="dropdown-item" href="">Data Science</a></li>
-                        <li><a class="dropdown-item" href="">Network Security</a></li>
+                        <li><a class="dropdown-item" href="{{ route('edufun.data-science') }}">Data Science</a></li>
+                        <li><a class="dropdown-item" href="{{ route('edufun.network-security') }}">Network Security</a></li>
                     </ul>
                 </li>
                 <li class="nav-item pe-5">
@@ -24,7 +24,7 @@
                     <a class="nav-link link-dark" href="{{ route('edufun.aboutus') }}"><span class="fs-5">About Us</span></a>
                 </li>
                 <li class="nav-item pe-5">
-                    <a class="nav-link link-dark" href=""><span class="fs-5">Popular</span></a>
+                    <a class="nav-link link-dark" href="{{ route('edufun.popular') }}"><span class="fs-5">Popular</span></a>
                 </li>
             </ul>
         </nav>

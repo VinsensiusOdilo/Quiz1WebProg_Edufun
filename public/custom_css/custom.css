@@ -19,11 +19,17 @@ body{
 
 .pic{
     border-radius: 50px;
+    height: 300px;
+    width: 500px;
 }
 
 .img{
     height: 200px;
     width: 200px;
+}
+
+.articleImage{
+    width: 100%;
 }
 
 /* #footer{

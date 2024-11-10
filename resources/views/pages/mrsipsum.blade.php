@@ -5,7 +5,7 @@
 <div class="container d-grid gap-5">
     <div class="row mt-5">
         <div class="col-2">
-                <img src="{{ asset('mrs_ipsum.png') }}" class="img-fluid border border-3 rounded-circle img" alt="Mrs. Ipsum profile picture">
+            <img src="{{ asset('mrs_ipsum.png') }}" class="img-fluid border border-3 rounded-circle img" alt="Mrs. Ipsum profile picture">
             <!-- <span class="fw-bold fs-3">Mr. Lorem</span>
             <span class="fs-5">Network Security</span> -->
         </div>
@@ -18,23 +18,27 @@
     <div class="row">
         <table class="table">
             <tbody>
+                @foreach ($dataScienceArticles as $ds)
                 <tr class="pt-5 pb-5">
                     <td class="col-5">
-                        <img src="{{ asset('DeepLearning_bg.webp') }}" alt="DeepLearning-bg" class="img-fluid pic">
+                        <img src="{{ asset($ds->image_name) }}" alt={{ $ds->image_name }} class="img-fluid pic">
                     </td>
                     <td class="col-7">
-                        <span class="fs-3 fw-bold">Deep Learning</span>
+                        <span class="fs-3 fw-bold">{{ $ds->title }}</span>
                         <br>
-                        <span class="fs-6">07 Nov 2024 | by: Vinsen</span>
-                        <p class="pt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Non amet facilis, laudantium perferendis accusamus atque aut molestias, sit dolore tenetur accusantium id fuga aspernatur nesciunt itaque quidem dolor. Ut aliquid tempora nisi numquam cupiditate adipisci harum dolorum blanditiis, ex, iusto unde. Dolore reiciendis repudiandae impedit iure iusto adipisci quis nihil alias dolor.</p>
+                        <span class="fs-6">{{ \Carbon\Carbon::parse($ds->time_created)->format('d M Y') . " | " . $ds->writers->author_name }}</span>
+                        <p class="pt-2">{{ Str::limit($ds->content, 75) }}</p>
 
                         <div class="d-flex flex-row-reverse">
                             <button class="btn btn-large btn-dark fw-bold">Read more...</button>
                         </div>
                     </td>
                 </tr>
+                @endforeach
+                
             </tbody>
         </table>
+        {{ $dataScienceArticles->links() }}
     </div>
 </div>
 

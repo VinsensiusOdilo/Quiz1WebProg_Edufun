@@ -12,6 +12,6 @@ class Articles extends Model
     protected $guarded=[];
 
     public function writers(){
-        return $this->belongsTo(Writers::class);
+        return $this->belongsTo(Writers::class, 'author_id');
     }
 }
